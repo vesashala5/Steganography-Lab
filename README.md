@@ -63,9 +63,8 @@ Ky program përdoret për rikthimin e mesazhit nga imazhi stego (stego-image.bmp
 
 Mesazhi u fsheh dhe u rikuperua me sukses. Ndryshimet vizuale ishin minimale.
 
-Ndryshimi i colour_plane
-
-### U testuan:
+### Ndryshimi i colour_plane
+U testuan:
 
 Red (0)
 Green (1)
@@ -73,9 +72,8 @@ Blue (2)
 
 Mesazhi u rikuperua me sukses në të gjitha rastet.
 
-Ndryshimi i bit_position
-
-### U testuan vlerat 7, 5 dhe 0.
+### Ndryshimi i bit_position
+U testuan vlerat 7, 5 dhe 0.
 
 Me bit_position = 7 ndryshimet vizuale janë pothuajse të padukshme
 Me bit_position = 0 mund të ndodhin deformime më të mëdha, por në këtë projekt ato nuk ishin shumë të theksuara për shkak të mesazhit të shkurtër
@@ -90,19 +88,19 @@ përdorimi i key të gabuar bën që mesazhi të mos rikuperohet saktë
 BMP është format i përshtatshëm sepse nuk përdor kompresim
 Rezultatet e Kapacitetit
 
-### flowers.bmp
+#### flowers.bmp
 Width: 500
 Height: 300
 Pixels: 150000
 Capacity: 18750 bytes
 
-### dice.bmp
+#### dice.bmp
 Width: 400
 Height: 454
 Pixels: 181600
 Capacity: 22700 bytes
 
-### tiger.bmp
+#### tiger.bmp
 Width: 520
 Height: 330
 Pixels: 171600
@@ -111,3 +109,4 @@ Capacity: 21450 bytes
 ## Përfundim
 
 Ky projekt demonstroi me sukses implementimin bazik të steganografisë së imazheve duke përdorur teknikën LSB. Sistemi arriti të fshehë dhe rikuperojë mesazhin sekret në mënyrë efektive, duke ruajtur cilësinë vizuale të imazhit.
+
