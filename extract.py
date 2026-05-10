@@ -3,8 +3,8 @@ import random
 
 # B1 - Same configuration (must match embed.py exactly)
 key = 2026
-colour_plane = 2   # must be identical
-bit_position = 0   # must be identical
+colour_plane = 1   # must be identical
+bit_position = 7   # must be identical
 
 stego_image = 'steg_lab/stego-image.bmp'
 
