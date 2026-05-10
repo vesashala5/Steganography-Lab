@@ -32,7 +32,8 @@ Pillow (PIL)
 Google Colab
 Visual Studio Code
 GitHub
-Implementimi
+
+## Implementimi
 embed.py
 
 Ky program përdoret për fshehjen e mesazhit sekret brenda imazhit. Ai lexon mesazhin nga file secret.txt, e konverton në 7-bit ASCII dhe e vendos në pixelat e imazhit duke përdorur një rend pseudo-random.
@@ -53,7 +54,7 @@ Mesazhi u fsheh dhe u rikuperua me sukses. Ndryshimet vizuale ishin minimale.
 
 Ndryshimi i colour_plane
 
-U testuan:
+### U testuan:
 
 Red (0)
 Green (1)
@@ -63,7 +64,7 @@ Mesazhi u rikuperua me sukses në të gjitha rastet.
 
 Ndryshimi i bit_position
 
-U testuan vlerat 7, 5 dhe 0.
+### U testuan vlerat 7, 5 dhe 0.
 
 Me bit_position = 7 ndryshimet vizuale janë pothuajse të padukshme
 Me bit_position = 0 mund të ndodhin deformime më të mëdha, por në këtë projekt ato nuk ishin shumë të theksuara për shkak të mesazhit të shkurtër
