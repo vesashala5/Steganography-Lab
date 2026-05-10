@@ -1,4 +1,4 @@
-##Image Steganography me Python (LSB Method)
+# Image Steganography me Python (LSB Method)
 ## Përshkrimi i Projektit
 
 Ky projekt është realizuar në kuadër të laboratorit për Data Security. Qëllimi i tij është implementimi i një sistemi të thjeshtë të steganografisë së imazheve duke përdorur teknikën Least Significant Bit (LSB) për fshehjen dhe rikthimin e mesazheve sekrete brenda imazheve bitmap (.bmp).
