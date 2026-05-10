@@ -1,112 +1,154 @@
-# Image Steganography me Python (LSB Method)
-## Përshkrimi i Projektit
+# Image Steganography
+## Përshkrimi
 
-Ky projekt është realizuar në kuadër të laboratorit për Data Security. Qëllimi i tij është implementimi i një sistemi të thjeshtë të steganografisë së imazheve duke përdorur teknikën Least Significant Bit (LSB) për fshehjen dhe rikthimin e mesazheve sekrete brenda imazheve bitmap (.bmp).
+Ky projekt është realizuar në kuadër të lëndës **Data Security** dhe demonstron implementimin praktik të **steganografisë së imazheve** duke përdorur teknikën **Least Significant Bit (LSB)**.
 
-## Funksionaliteti
+Sistemi mundëson fshehjen e një mesazhi sekret brenda një imazhi bitmap (`.bmp`) dhe rikthimin e tij duke përdorur të njëjtët parametra të konfigurimit.
 
-Sistemi mundëson:
+---
 
-Fshehjen e një mesazhi sekret brenda një imazhi (.bmp)
-Rikthimin e mesazhit nga imazhi stego
-Përdorimin e parametrave si key, colour_plane dhe bit_position për siguri dhe kontroll
-Struktura e Projektit
+## Qëllimi i Projektit
 
-## Projekti përbëhet nga këto files:
+Qëllimi është ndërtimi i një sistemi që:
 
+* Fsheh një mesazh sekret brenda një imazhi `.bmp`
+* Rikthen mesazhin nga imazhi stego
+* Përdor parametra konfigurimi për kontroll dhe siguri (`key`, `colour_plane`, `bit_position`)
+
+---
+
+## Struktura e Projektit
+
+```
 steg_lab/
-
 │
-
-├── embed.py # Programi për fshehjen e mesazhit
-
-├── extract.py # Programi për nxjerrjen e mesazhit
-
-├── secret.txt # Mesazhi sekret
-
-├── stego-image.bmp # Imazhi final me mesazhin e fshehur
-
+├── embed.py
+├── extract.py
+├── secret.txt
+├── stego-image.bmp
 │
-
 └── img/
-
     ├── flowers.bmp
-    
     ├── dice.bmp
-    
     └── tiger.bmp
+```
 
+---
 
 ## Teknologjitë e Përdorura
-Python
-Pillow (PIL)
-Google Colab
-Visual Studio Code
-GitHub
+
+* Python
+* Pillow (PIL)
+* Google Colab
+* Visual Studio Code
+* GitHub
+
+---
 
 ## Implementimi
-embed.py
 
-Ky program përdoret për fshehjen e mesazhit sekret brenda imazhit. Ai lexon mesazhin nga file secret.txt, e konverton në 7-bit ASCII dhe e vendos në pixelat e imazhit duke përdorur një rend pseudo-random.
+### `embed.py`
 
-## Parametrat:
+Programi përdoret për fshehjen e mesazhit sekret në imazh.
 
+Hapat që ndjek:
+
+1. Lexon mesazhin nga `secret.txt`
+2. E konverton në **7-bit ASCII**
+3. E shpërndan në pikselët e imazhit duke përdorur rend **pseudo-random**
+
+**Parametrat e përdorur:**
+
+```python
 key = 2026
 colour_plane = 1
 bit_position = 7
-extract.py
+```
 
-Ky program përdoret për rikthimin e mesazhit nga imazhi stego (stego-image.bmp). Ai përdor të njëjtat parametra si në embed për të rindërtuar rendin e pixelave dhe për të nxjerrë mesazhin origjinal.
+---
 
-## Eksperimentet
-### Testimi me flowers.bmp
+### `extract.py`
 
-Mesazhi u fsheh dhe u rikuperua me sukses. Ndryshimet vizuale ishin minimale.
+Programi përdoret për nxjerrjen e mesazhit nga `stego-image.bmp`.
 
-### Ndryshimi i colour_plane
-U testuan:
+Përdor të njëjtët parametra (`key`, `colour_plane`, `bit_position`) për të rindërtuar rendin e pikselëve dhe për të rikuperuar mesazhin origjinal.
 
-Red (0)
-Green (1)
-Blue (2)
+---
 
-Mesazhi u rikuperua me sukses në të gjitha rastet.
+## Eksperimentet e Realizuara
 
-### Ndryshimi i bit_position
-U testuan vlerat 7, 5 dhe 0.
+### Testimi me `flowers.bmp`
 
-Me bit_position = 7 ndryshimet vizuale janë pothuajse të padukshme
-Me bit_position = 0 mund të ndodhin deformime më të mëdha, por në këtë projekt ato nuk ishin shumë të theksuara për shkak të mesazhit të shkurtër
-Testimi me tiger.bmp
+Sistemi u ekzekutua me:
 
-Mesazhi u rikuperua me sukses dhe cilësia vizuale e imazhit mbeti e mirë.
+* `colour_plane = 1`
+* `bit_position = 7`
 
-### Observime
-bit_position = 7 është më i sigurt për ruajtje pa ndryshime vizuale
-key siguron shpërndarje pseudo-random të pixelave
-përdorimi i key të gabuar bën që mesazhi të mos rikuperohet saktë
-BMP është format i përshtatshëm sepse nuk përdor kompresim
-Rezultatet e Kapacitetit
+Mesazhi u rikuperua me sukses dhe ndryshimet vizuale në imazh ishin minimale.
 
-#### flowers.bmp
-Width: 500
-Height: 300
-Pixels: 150000
-Capacity: 18750 bytes
+---
 
-#### dice.bmp
-Width: 400
-Height: 454
-Pixels: 181600
-Capacity: 22700 bytes
+### Ndryshimi i `colour_plane`
 
-#### tiger.bmp
-Width: 520
-Height: 330
-Pixels: 171600
-Capacity: 21450 bytes
+U testuan të tre planet e ngjyrave:
 
-## Përfundim
+* Red (`0`)
+* Green (`1`)
+* Blue (`2`)
 
-Ky projekt demonstroi me sukses implementimin bazik të steganografisë së imazheve duke përdorur teknikën LSB. Sistemi arriti të fshehë dhe rikuperojë mesazhin sekret në mënyrë efektive, duke ruajtur cilësinë vizuale të imazhit.
+Në të gjitha rastet, mesazhi u rikuperua me sukses me ndryshime shumë të vogla vizuale.
 
+---
+
+### Ndryshimi i `bit_position`
+
+U testuan vlerat:
+
+* `7`
+
+* `5`
+
+* `0`
+
+* Me `bit_position = 7`, ndryshimet vizuale ishin pothuajse të padukshme
+
+* Me `bit_position = 0`, pritet deformim më i madh vizual sepse modifikohet biti më i rëndësishëm i pikselit. Në eksperiment, deformimi nuk ishte shumë i theksuar për shkak të gjatësisë së mesazhit dhe shpërndarjes së pikselëve.
+
+---
+
+### Testimi me `tiger.bmp`
+
+Sistemi u testua edhe me këtë imazh duke përdorur `bit_position = 7`. Mesazhi u rikuperua me sukses dhe cilësia vizuale mbeti e mirë.
+
+---
+
+## Rezultatet e Kapacitetit të Imazheve
+
+Kapaciteti për ruajtjen e të dhënave varet direkt nga numri i pikselëve (`width × height`).
+
+| Image       | Width | Height | Pixels | Capacity (bits) | Capacity (bytes) |
+| ----------- | ----: | -----: | -----: | --------------: | ---------------: |
+| flowers.bmp |   500 |    300 | 150000 |          150000 |            18750 |
+| dice.bmp    |   400 |    454 | 181600 |          181600 |            22700 |
+| tiger.bmp   |   520 |    330 | 171600 |          171600 |            21450 |
+
+Imazhi **dice.bmp** ka kapacitetin më të madh për ruajtjen e të dhënave sepse ka numrin më të madh të pikselëve.
+
+---
+
+## Testimi me `key` të gabuar
+
+`extract.py` u ekzekutua me një `key` të pasaktë (p.sh. `1234` në vend të `2026`).
+
+Rezultati ishte një mesazh i korruptuar dhe i pakuptueshëm.
+
+**Shpjegimi:**
+Kur përdoret `key` i gabuar, rendi pseudo-random i pikselëve nuk përputhet me atë të përdorur gjatë embedding-ut. Si rezultat, bitat lexohen në rend të gabuar dhe mesazhi nuk mund të rikuperohet saktë.
+
+Kjo tregon rëndësinë e `key` si komponent sigurie në sistemin e steganografisë.
+
+---
+
+## Përmbledhje
+
+Ky projekt demonstron implementimin praktik të steganografisë së imazheve me teknikën LSB duke përdorur Python. Sistemi arrin të fshehë dhe rikuperojë mesazhin sekret me sukses, duke ruajtur cilësinë vizuale të imazhit dhe duke ofruar kontroll përmes parametrave të konfigurimit.
