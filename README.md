@@ -15,16 +15,27 @@ Struktura e Projektit
 ## Projekti përbëhet nga këto files:
 
 steg_lab/
+
 │
+
 ├── embed.py # Programi për fshehjen e mesazhit
+
 ├── extract.py # Programi për nxjerrjen e mesazhit
+
 ├── secret.txt # Mesazhi sekret
+
 ├── stego-image.bmp # Imazhi final me mesazhin e fshehur
+
 │
+
 └── img/
+
     ├── flowers.bmp
+    
     ├── dice.bmp
+    
     └── tiger.bmp
+
 
 ## Teknologjitë e Përdorura
 Python
