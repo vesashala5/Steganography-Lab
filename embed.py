@@ -6,7 +6,7 @@ key = 2026
 colour_plane = 1  # 0=red, 1=green, 2=blue
 bit_position = 7   # LSB style
 
-cover_image = 'steg_lab/img/flowers.bmp'
+cover_image = 'steg_lab/img/dice.bmp'
 secret_file = 'steg_lab/secret.txt'
 output_image = 'steg_lab/stego-image.bmp'
 
