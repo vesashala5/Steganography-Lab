@@ -12,16 +12,21 @@ Rikthimin e mesazhit nga imazhi stego
 Përdorimin e parametrave si key, colour_plane dhe bit_position për siguri dhe kontroll
 Struktura e Projektit
 
-## Projekti përbëhet nga këto file:
+## Projekti përbëhet nga këto files:
 
-embed.py
-extract.py
-secret.txt
-stego-image.bmp
-img/flowers.bmp
-img/dice.bmp
-img/tiger.bmp
-Teknologjitë e Përdorura
+steg_lab/
+│
+├── embed.py # Programi për fshehjen e mesazhit
+├── extract.py # Programi për nxjerrjen e mesazhit
+├── secret.txt # Mesazhi sekret
+├── stego-image.bmp # Imazhi final me mesazhin e fshehur
+│
+└── img/
+    ├── flowers.bmp
+    ├── dice.bmp
+    └── tiger.bmp
+
+## Teknologjitë e Përdorura
 Python
 Pillow (PIL)
 Google Colab
