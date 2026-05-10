@@ -3,7 +3,7 @@ import random
 
 # A1 - Shared configuration
 key = 2026
-colour_plane = 1  # 0=red, 1=green, 2=blue
+colour_plane = 0  # 0=red, 1=green, 2=blue
 bit_position = 7   # LSB style
 
 cover_image = 'steg_lab/img/dice.bmp'
