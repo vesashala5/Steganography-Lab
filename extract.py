@@ -2,7 +2,7 @@ from PIL import Image
 import random
 
 # B1 - Same configuration (must match embed.py exactly)
-key = 2026
+key = 1234
 colour_plane = 1   # must be identical
 bit_position = 7   # must be identical
 
